@@ -1,6 +1,7 @@
 import React from 'react'
 
 import TopBar from '../components/topBar';
+import ProjectPane from '../components/projectPane';
 import logo from '../logo.svg'
 
 const HomePage = () => {
@@ -8,6 +9,9 @@ const HomePage = () => {
         <div>
             <div>
                 <TopBar></TopBar>
+            </div>
+            <div>
+                <ProjectPane></ProjectPane>
             </div>
             <div>
                 <img src={logo} className="App-logo" alt="logo" />
