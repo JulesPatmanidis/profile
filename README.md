@@ -1,6 +1,6 @@
 # profile
 
-Personal site with projects and publications. It is plain HTML and CSS with no build step.
+Personal site with projects and publications. Plain HTML and CSS.
 
 Open `index.html` in a browser to preview it. GitHub Pages serves the repo root from `main`.
 
