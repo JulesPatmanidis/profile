@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projects and publications of Ioulios Patmanidis, software engineer working on systems security.">
+  <meta name="theme-color" content="#090b0c">
+  <title>Ioulios Patmanidis</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top-bar">
+    <a class="brand" href="#top"><span class="prompt">$</span> iouliosp</a>
+    <nav>
+      <a href="#projects">~/projects</a>
+      <a href="#publications">~/papers</a>
+    </nav>
+  </header>
+
+  <main class="shell" id="top">
+    <section class="hero">
+      <p class="eyebrow"><span class="accent">~</span>/profile</p>
+      <h1>Ioulios Patmanidis</h1>
+      <p class="hero-summary">
+        I am a software engineer working on systems security. My MSc thesis added PKU-based
+        in-process isolation to a Linux system call interposer, and that work fed into two
+        co-authored research papers. I also build tools and renderers in C++, Python, Java and Rust.
+      </p>
+      <p class="hero-meta">
+        MSc Computer Science (Cum Laude), TU Delft, 2026<br>
+        BEng Electronics and Computer Science (First Class Honours), University of Edinburgh, 2023
+      </p>
+      <p class="hero-links">
+        <a href="https://github.com/JulesPatmanidis">github</a>
+        <a href="mailto:i.patmanidis@outlook.com">email</a>
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-label"><span><span class="accent">~</span>/projects</span></h2>
+
+      <article class="project" id="iso-k23">
+        <p class="path">./iso-k23</p>
+        <h3>ISO-K23</h3>
+        <p class="summary">
+          MSc thesis. Extends K23, a user-space system call interposer, with Intel PKU isolation so the
+          application it monitors cannot tamper with the interposer's own code, stacks, heap and
+          thread-local state. Blocks all 56 proof-of-concept attacks in its test suite and stays within
+          10% of native throughput on nginx, lighttpd, Redis, Memcached, SQLite and Nanomsg.
+        </p>
+        <p class="stack">C · C++ · x86-64 · Linux · Intel PKU</p>
+        <p class="private">code private for now</p>
+      </article>
+
+      <article class="project" id="3d-visualizer">
+        <p class="path">./3d-visualizer</p>
+        <h3>3d-visualizer</h3>
+        <p class="summary">
+          Renderer for 3D scalar volumes and 2D time-varying vector fields. Supports raycast slicing,
+          MIP, isosurfaces and transfer-function compositing, accelerated with empty-space skipping and
+          volume bricking, plus streamlines and line integral convolution for flow data. One C++ codebase
+          runs natively and in the browser through WebAssembly and WebGL2.
+        </p>
+        <p class="stack">C++ · OpenGL · WebGL2 · GLSL · Emscripten</p>
+        <p class="links">
+          <a href="https://julespatmanidis.github.io/3d-visualizer-site/">live demo</a>
+        </p>
+      </article>
+
+      <article class="project" id="img-taggr">
+        <p class="path">./img-taggr</p>
+        <h3>img-taggr</h3>
+        <p class="summary">
+          Photo metadata editor. Place photos on a map and a timeline to set date, time and location
+          for a whole folder at once. A single Rust engine runs in the browser through WebAssembly and
+          on the desktop through Tauri. Photos never leave the machine.
+        </p>
+        <img src="images/img-taggr.jpg" alt="img-taggr with photos placed on a map of the Cyclades and a timeline below" loading="lazy">
+        <p class="stack">Rust · WebAssembly · Tauri · JavaScript</p>
+        <p class="links">
+          <a href="https://julespatmanidis.github.io/img_taggr/">live demo</a>
+          <a href="https://github.com/JulesPatmanidis/img_taggr">repo</a>
+        </p>
+      </article>
+
+      <article class="project" id="snmpv3">
+        <p class="path">./snmpv3-survey</p>
+        <h3>SNMPv3 exposure survey</h3>
+        <p class="summary">
+          Group project for the TU Delft Hacking Lab. Scanned the Dutch IPv4 space and found about 7,600
+          hosts exposing SNMPv3. The unauthenticated discovery exchange leaks vendor and uptime, which
+          let us attribute about 6,100 hosts to 63 vendors and estimate how many CVEs each device has
+          missed since its last reboot.
+        </p>
+        <img src="images/snmpv3.png" alt="Bar chart of vulnerable versus total IPs per vendor" loading="lazy">
+        <p class="stack">Python · ZMap · tshark · NIST CVE API</p>
+        <p class="links">
+          <a href="https://github.com/HuibSprangers-leiden/HackingLab-SNMP">repo</a>
+        </p>
+      </article>
+
+      <article class="project" id="scengen">
+        <p class="path">./scengen</p>
+        <h3>ScenGen</h3>
+        <p class="summary">
+          BEng thesis. Generates and runs 4G LTE emulation experiments on the POWDER testbed from a YAML
+          description of eNBs, UE mobility and traffic. I extended the OpenAirInterface UE and the
+          multi-UE proxy to support controlled X2 handovers across multiple eNBs.
+        </p>
+        <img src="images/scengen.png" alt="ScenGen architecture diagram" loading="lazy">
+        <p class="stack">Python · C · C++ · OpenAirInterface · Kubernetes</p>
+        <p class="links">
+          <a href="https://github.com/JulesPatmanidis/proxy-handover">proxy</a>
+          <a href="https://github.com/JulesPatmanidis/openairinterface5g-IP">oai fork</a>
+          <a href="https://github.com/JulesPatmanidis/kPhobos">k8s deployment</a>
+          <a href="https://github.com/JulesPatmanidis/handoverProfile">powder profile</a>
+        </p>
+      </article>
+
+      <article class="project" id="drone-controller">
+        <p class="path">./drone-controller</p>
+        <h3>Drone delivery controller</h3>
+        <p class="summary">
+          Route planner for a simulated food delivery drone, using Theta* any-angle pathfinding around
+          no-fly zones. Reordering pickups and prioritising higher-value orders raised delivered value
+          from about 96% to 99%. Outputs flight paths as GeoJSON.
+        </p>
+        <img src="images/drone-controller.jpg" alt="Drone flight path on a map avoiding no-fly zones" loading="lazy">
+        <p class="stack">Java · Maven · Apache Derby · GeoJSON</p>
+        <p class="links">
+          <a href="https://github.com/JulesPatmanidis/InfLargePractical">repo</a>
+        </p>
+      </article>
+
+      <article class="project" id="pathfinder">
+        <p class="path">./pathfinder</p>
+        <h3>Pathfinder</h3>
+        <p class="summary">
+          Desktop visualizer for pathfinding and maze generation. Draw walls or generate a maze, then
+          watch A*, Dijkstra, BFS, DFS, best-first or worst-first search explore the grid.
+        </p>
+        <img src="images/pathfinder.jpg" alt="A* search through a generated maze" loading="lazy">
+        <p class="stack">Java · Swing · Gradle</p>
+        <p class="links">
+          <a href="https://github.com/JulesPatmanidis/Pathfinder">repo</a>
+        </p>
+      </article>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-label"><span><span class="accent">~</span>/papers</span></h2>
+
+      <article class="paper">
+        <h3>IBTpoline: Flexible, Robust, and Intel IBT-compliant System Call Hooking</h3>
+        <p class="authors">
+          Alexander J. Gaidis, <strong>Ioulios Patmanidis</strong>, Isabelle Shapiro,
+          Georgios Portokalidis, Alexios Voulimeneas, Vasileios P. Kemerlis
+        </p>
+        <p class="venue">USENIX ATC 2026</p>
+      </article>
+
+      <article class="paper">
+        <h3>Mystes: Secure System Call Interposition Without Sacrificing Performance or Usability</h3>
+        <p class="authors">
+          Alexios Voulimeneas, <strong>Ioulios Patmanidis</strong>, Thanasis Kotsalis, Vaggelis Atlidakis
+        </p>
+        <p class="venue">under submission</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <p>© 2026 Ioulios Patmanidis</p>
+  </footer>
+</body>
+</html>
